@@ -131,7 +131,7 @@ def candidate_questions(noun):
     return list({(q.sentence, q.polish_sentence, q.expected): q for q in result}.values())
 
 
-def make_questions(groups, per_noun=3):
+def make_questions(groups, per_noun=2):
     """Losuje różne konstrukcje bez wymuszania mechanicznej powtarzalności.
 
     Z każdego wybranego słowa trafia do rundy do per_noun zdań.
