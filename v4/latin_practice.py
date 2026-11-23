@@ -63,12 +63,11 @@ def decline(noun, case, number):
         raise ValueError("Brak obsługi deklinacji: " + noun.declension)
     if noun.latin == "deus" and number == "pl":
         raise ValueError("deus ma oboczne formy liczby mnogiej")
-    if noun.latin == "filius" and case == "voc" and number == "sg":
-        return "fili"
     if noun.latin == "deus" and case == "voc" and number == "sg":
         return "deus"
-    if noun.latin in {"filius", "nuntius", "socius", "gladius"} and case == "voc" and number == "sg":
-        return noun.stem + "i" if noun.latin.endswith("ius") else noun.latin
+
+    if noun.latin.endswith("ius") and case == "voc" and number == "sg":
+        return noun.stem
     key = "I" if noun.declension == "I" else ("II_n" if noun.gender == "n" else "II_m")
     ending = ENDINGS[key][number][case]
     if key == "II_m" and number == "sg":
