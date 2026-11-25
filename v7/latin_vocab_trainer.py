@@ -40,8 +40,8 @@ class LatinTrainer(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Łacina – słówka, zdania i odmiana")
-        self.geometry("930x890")
-        self.minsize(750, 800)
+        self.geometry("930x950")
+        self.minsize(750, 900)
         self.configure(bg="#f4f7fb")
 
         self.group_vars = {name: tk.BooleanVar(value=False) for name in WORD_GROUPS}
@@ -579,8 +579,8 @@ class LatinTrainer(tk.Tk):
             return
         window = tk.Toplevel(self)
         window.title('Historia nauki łaciny')
-        window.geometry('900x680')
-        window.minsize(650, 500)
+        window.geometry('900x750')
+        window.minsize(650, 700)
         frame = ttk.Frame(window, padding=14)
         frame.pack(fill='both', expand=True)
         ttk.Label(frame, text='Statystyki ukończonych lekcji', style='Title.TLabel').pack(anchor='w', pady=(0, 10))
